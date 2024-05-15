@@ -67,3 +67,15 @@ body {
 #start-btn:hover, #next-btn:hover {
     background-color: #362424;
 }
+.hide {
+    display: none;
+}
+.correct {
+    background-color: #51e351;
+    color: #fff;
+}
+.incorrect {
+    background-color: #e63946;
+    color: #fff;
+}
+
