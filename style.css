@@ -10,7 +10,7 @@ body {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #quiz-area {
-    width: 90%;
+    width: 75%;
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;

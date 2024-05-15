@@ -103,8 +103,8 @@ const questions = [
             { text: 'Taylor Swift', correct: false },
             { text: 'William Shakespeare', correct: true },
         ]
-    },
-]
+    }
+];
 
 // hide the next button from the starting page and the questions before answered.
 document.addEventListener('DOMContentLoaded', () => {
@@ -133,7 +133,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function startGame() {
     startButton.classList.add('hide');
-    shuffledQuestions = questions.sort(() => Math.random() - .2);
+    shuffledQuestions = questions.sort(() => Math.random() - 2);
     currentQuestionIndex = 0;
     questionAreaElement.classList.remove('hide');
     setNextQuestion();
