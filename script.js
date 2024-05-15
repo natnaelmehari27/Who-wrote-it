@@ -118,3 +118,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const quizAreaElement = document.getElementById('quiz-area');
 
   let shuffledQuestions, currentQuestionIndex;
+
+  startButton.addEventListener('click', startGame);
+
+  function startGame() {
+    startButton.classList.add('hide');
+    shuffledQuestions = questions.sort(() => Math.random() - .2);
+    currentQuestionIndex = 0;
+    questionAreaElement.classList.remove('hide');
+    setNextQuestion();
+  }
