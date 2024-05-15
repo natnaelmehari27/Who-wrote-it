@@ -120,6 +120,10 @@ document.addEventListener('DOMContentLoaded', () => {
   let shuffledQuestions, currentQuestionIndex;
 
   startButton.addEventListener('click', startGame);
+  nextButton.addEventListener('click', () => {
+    currentQuestionIndex++;
+    setNextQuestion();
+  });
 
   function startGame() {
     startButton.classList.add('hide');
@@ -141,6 +145,11 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => selectAnswer(button));
         answerButtonsElement.appendChild(button);
     });
+  }
+  // shows the next question
+  function setNextQuestion() {
+    resetState();
+    showQuestion(shuffledQuestions[currentQuestionIndex]);
   }
  // choosing answers
   function selectAnswer(selectedButton) {
