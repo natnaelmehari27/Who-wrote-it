@@ -45,3 +45,25 @@ body {
 .button:hover {
     background-color: #362424;
 }
+#controls {
+    justify-content: center;
+    text-align: center;
+    margin-top: 20px;
+}
+#controls.show {
+    display: flex;
+}
+#start-btn, #next-btn {
+    padding: 12px 32px;
+    color: #fff;
+    background: #222;
+    border: none;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+#start-btn:hover, #next-btn:hover {
+    background-color: #362424;
+}
