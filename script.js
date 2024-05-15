@@ -116,8 +116,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const questionElement = document.getElementById('question');
   const answerButtonsElement = document.getElementById('answer-buttons');
   const quizAreaElement = document.getElementById('quiz-area');
+  const resultsElement = document.createElement('div');
+  resultsElement.setAttribute('id', 'results');
+  resultsElement.classList.add('results', 'hide');
+  quizAreaElement.appendChild(resultsElement);
+  
 
   let shuffledQuestions, currentQuestionIndex;
+  let score = 0;
 
   startButton.addEventListener('click', startGame);
   nextButton.addEventListener('click', () => {
@@ -182,4 +188,17 @@ document.addEventListener('DOMContentLoaded', () => {
   function clearStatusClass(element) {
     element.classList.remove('correct');
     element.classList.remove('incorrect');
+  }
+  // the score page
+  function concludeQuiz() {
+    questionAreaElement.classList.add('hide');
+    nextButton.classList.add('hide');
+  
+    resultsElement.classList.remove('hide');
+    resultsElement.innerHTML = `
+        <h2>Quiz Completed!</h2>
+        <h3>You scored ${score} out of ${shuffledQuestions.length}</h3>
+        <button onclick="restartQuiz()">Play Again!</button>
+    `;
+    quizAreaElement.appendChild(resultsElement);
   }
