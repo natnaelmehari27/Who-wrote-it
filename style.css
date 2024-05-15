@@ -1,0 +1,15 @@
+* {
+    padding: 0;
+    margin: 0;
+   
+}
+body {
+    display: flex;
+    height: 100vh; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: linear-gradient(to right, rgba(161, 59, 224, 0.933), #3390aa );
+    color: #362424;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
