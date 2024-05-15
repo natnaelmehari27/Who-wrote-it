@@ -29,3 +29,19 @@ body {
     font-size: 24px;
     margin-bottom: 10px;
 }
+.btn {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.button {
+    border: none;
+    padding: 24px 32px;
+    font-size: 18px;
+    background-color: #1d3557 ;
+    color: #fff;
+}
+.button:hover {
+    background-color: #362424;
+}
