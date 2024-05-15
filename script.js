@@ -128,3 +128,49 @@ document.addEventListener('DOMContentLoaded', () => {
     questionAreaElement.classList.remove('hide');
     setNextQuestion();
   }
+ // to display the questions 
+  function showQuestion(question) {
+    questionElement.innerText = question.question;
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', () => selectAnswer(button));
+        answerButtonsElement.appendChild(button);
+    });
+  }
+ // choosing answers
+  function selectAnswer(selectedButton) {
+    Array.from(answerButtonsElement.children).forEach(button => {
+        button.disabled = true;
+        setStatusClass(button, button.dataset.correct);
+    });
+    const correct = selectedButton.dataset.correct;
+    if (correct) {
+        score++;
+    }
+    setStatusClass(selectedButton, correct);
+    setTimeout(() => {
+        if (shuffledQuestions.length > currentQuestionIndex + 1) {
+            nextButton.classList.remove('hide');
+        } else {
+            concludeQuiz();
+        }
+    });
+ } 
+ // feedback if the answer is correct or incorrect 
+ function setStatusClass(element, correct) {
+    clearStatusClass(element);
+    if (correct) {
+        element.classList.add('correct');
+    } else {
+        element.classList.add('incorrect');
+    }
+  }
+  function clearStatusClass(element) {
+    element.classList.remove('correct');
+    element.classList.remove('incorrect');
+  }
