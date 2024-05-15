@@ -138,6 +138,13 @@ document.addEventListener('DOMContentLoaded', () => {
     questionAreaElement.classList.remove('hide');
     setNextQuestion();
   }
+  function resetState() {
+    clearStatusClass(document.body);
+    nextButton.classList.add('hide');
+    while (answerButtonsElement.firstChild) {
+        answerButtonsElement.removeChild(answerButtonsElement.firstChild);
+    }
+  }
  // to display the questions 
   function showQuestion(question) {
     questionElement.innerText = question.question;
@@ -201,4 +208,11 @@ document.addEventListener('DOMContentLoaded', () => {
         <button onclick="restartQuiz()">Play Again!</button>
     `;
     quizAreaElement.appendChild(resultsElement);
+  }
+  // to restart the quiz once it's done
+  function restartQuiz() {
+    resultsElement.classList.add('hide');
+    score = 0;
+    currentQuestionIndex = 0;
+    startGame();
   }

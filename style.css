@@ -1,16 +1,13 @@
-* {
-    padding: 0;
-    margin: 0;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
 body {
+    margin: 0;
     display: flex;
     height: 100vh; 
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background: linear-gradient(to right, rgba(161, 59, 224, 0.933), #3390aa );
-    color: #362424;
+    color: #362424; 
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 #quiz-area {
     width: 90%;
@@ -26,7 +23,7 @@ body {
 }
 
 #question {
-    font-size: 24px;
+    font-size: 25px;
     margin-bottom: 10px;
 }
 .btn {
@@ -34,6 +31,10 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 16px;
     margin-bottom: 20px;
+    padding: 10px 15px;  
+    font-size: 18px;
+    text-align: center;
+    border: none;
 }
 .button {
     border: none;
