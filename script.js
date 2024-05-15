@@ -105,3 +105,16 @@ const questions = [
         ]
     },
 ]
+
+// hide the next button from the starting page and the questions before answered.
+document.addEventListener('DOMContentLoaded', () => {
+    nextButton.classList.add('hide');
+  });
+  const startButton = document.getElementById('start-btn');
+  const nextButton = document.getElementById('next-btn');
+  const questionAreaElement = document.getElementById('question-area');
+  const questionElement = document.getElementById('question');
+  const answerButtonsElement = document.getElementById('answer-buttons');
+  const quizAreaElement = document.getElementById('quiz-area');
+
+  let shuffledQuestions, currentQuestionIndex;
