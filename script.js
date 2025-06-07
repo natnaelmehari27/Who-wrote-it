@@ -1,44 +1,107 @@
 const questions = [
     {
-        question: "“The world is a stage and all the men and women merely players.”",
+        question: 'Now you hang from my lips, like the garden of Babylon. With your boots beneath my bed, forever is the sweetest con.',
         answers: [
-            { text: "William Shakespeare", correct: true },
-            { text: "Taylor Swift", correct: false }
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
         ]
     },
     {
-        question: "“We never go out of style.”",
+        question: 'You kept me like a secret, but I kept you like an oath.',
         answers: [
-            { text: "William Shakespeare", correct: false },
-            { text: "Taylor Swift", correct: true }
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
         ]
     },
     {
-        question: "“Parting is such sweet sorrow.”",
+        question: 'I made you my temple, my mural, my sky, now im begging for footnotes in the story of your life.',
         answers: [
-            { text: "William Shakespeare", correct: true },
-            { text: "Taylor Swift", correct: false }
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
         ]
     },
     {
-        question: "“You belong with me.”",
+        question: 'And all we are is skin and bones, trained to get along, forever going with the flow, but you are friction',
         answers: [
-            { text: "William Shakespeare", correct: false },
-            { text: "Taylor Swift", correct: true }
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
         ]
     },
     {
-        question: "“Double, double toil and trouble; Fire burn, and caldron bubble.”",
+        question: 'Say a solemn prayer, Place a poppy in my hair, There is no morning glory. it was war; it was not fair.',
         answers: [
-            { text: "William Shakespeare", correct: true },
-            { text: "Taylor Swift", correct: false }
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
         ]
     },
     {
-        question: "“Shake it off!”",
+        question: 'You can plan for a change in weather and time, But i never planned on you changing your mind.',
         answers: [
-            { text: "William Shakespeare", correct: false },
-            { text: "Taylor Swift", correct: true }
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
+        ]
+    },
+    {
+        question: 'you said it was a great love, one for the ages. But if the story is over, Why am i still writing pages?',
+        answers: [
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
+        ]
+    },
+    {
+        question: 'Im just gonna shake, shake, I shake it off, I shake it off',
+        answers: [
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
+        ]
+    },
+    {
+        question: 'Be not afraid of greatness. Some are born great, some achieve greatness, and others have greatness thrust upon them.',
+        answers: [
+            { text: 'William Shakespeare', correct: true },
+            { text: 'Taylor Swift', correct: false }
+        ]
+    },
+    {
+        question: 'Uneasy lies the head that wears the crown.',
+        answers: [
+            { text: 'William Shakespeare', correct: true },
+            { text: 'Taylor Swift', correct: false }
+        ]
+    },
+    {
+        question: 'Though she be but little, she is fierce.',
+        answers: [
+            { text: 'William Shakespeare', correct: true },
+            { text: 'Taylor Swift', correct: false }
+        ]
+    },
+    {
+        question: 'Talking isnt doing. It is a kind of good deed to say well, and yet words are not deeds.',
+        answers: [
+            { text: 'William Shakespeare', correct: true },
+            { text: 'Taylor Swift', correct: false }
+        ]
+    },
+    {
+        question: 'In time we hate that which we often fear.',
+        answers: [
+            { text: 'William Shakespeare', correct: true },
+            { text: 'Taylor Swift', correct: false }
+        ]
+    },
+    {
+        question: 'You and I are past our dancing days.',
+        answers: [
+            { text: 'William Shakespeare', correct: false },
+            { text: 'Taylor Swift', correct: true }
+        ]
+    },
+    {
+        question: 'Sad hours seem long.',
+        answers: [
+            { text: 'William Shakespeare', correct: true },
+            { text: 'Taylor Swift', correct: false }
         ]
     }
 ];
@@ -71,7 +134,6 @@ totalQuestionsElement.innerText = questions.length;
 startBtn.addEventListener('click', startGame);
 // NEXT BUTTON
 nextBtn.addEventListener('click', () => {
-    currentQuestionIndex++;
     setNextQuestion();
 });
 
@@ -132,6 +194,8 @@ function resetState() {
     }
     clearInterval(timer);
     timerElement.innerText = '';
+    timerElement.style.color = ''; // Reset timer color
+    timerElement.classList.remove('shake'); // Remove shake animation
 }
 
 // Timer countdown logic
