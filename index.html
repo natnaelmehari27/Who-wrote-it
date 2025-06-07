@@ -21,25 +21,35 @@
 
 <body>
     <!--header-->
-    <div id="quiz-area">
+    <div id="quiz-area" role="main" aria-live="polite">
         <h1>Who wrote it?</h1>
+
+        <div id="score-area" aria-label="Score and progress" tabindex="0">
+            Score: <span id="score">0</span> / <span id="total-questions">0</span>
+        </div>
+
+        <div id="progress-bar" aria-label="Question progress">
+            <div id="progress-fill"></div>
+        </div>
+
+        <div id="timer" aria-live="assertive" aria-atomic="true" aria-label="Time remaining"></div>
         
           <!--main-->
         <div id="question-area">
-            <div id="question">Try to answer which writer wrote the following quotes.</div>
-            <div id="answer-buttons" class="btn">
-               <!--buttons for answer-->   
+            <div id="question" tabindex="0">Try to answer which writer wrote the following quotes.</div>
+            <div id="answer-buttons" class="btn" role="list">
+               <!--buttons for answer choices-->   
             </div>
         </div>
           <!--footer-->
-        <div id="controls">
-            <button id="start-btn">Start</button>
-            <button id="next-btn">Next</button>
+        <div id="controls" class="show">
+            <button id="start-btn" aria-label="Start Quiz">Start</button>
+            <button id="next-btn" aria-label="Next Question" class="hide">Next</button>
         </div>
-        <div id="result">
+        <div id="result" aria-live="polite" tabindex="0">
         </div>
     </div>
-  <script src="script.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 
 </html>
